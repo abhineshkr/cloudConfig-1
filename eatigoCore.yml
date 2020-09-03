@@ -1,5 +1,2 @@
-
-test:
-  message: Dev
 server:
-  port:8383
+  port: 8082

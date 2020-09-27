@@ -1,6 +1,30 @@
 spring:
-   application:
-    name: eatigoCore 
+  application:
+    name: eatigoCore
+  cloud:
+    config:
+      uri: http://202.149.218.74:10088
+      fail-fast: true
+    stream:
+      bindings:
+        SinkChannel:
+          destination: rabbitpubSubExchange
+          binder: local_rabbit
+          group: rabbitMQGroup
+        SourceChannel:
+          destination: rabbitpubSubExchange
+          binder: local_rabbit
+      binders:
+         local_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 192.168.1.248
+                port: 5672
+                username: kg
+                password: kg
+                virtual-host: /
 
 server:
   compression:

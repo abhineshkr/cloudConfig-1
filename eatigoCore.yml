@@ -22,7 +22,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: refresh,hystrix.stream,bus-refresh,health,httptrace,info,loggers,metrics,mappings,shutdown,threaddump,logfile,prometheus
 
 logging:
   level:

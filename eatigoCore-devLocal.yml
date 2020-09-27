@@ -33,18 +33,17 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://202.149.218.74:10089/eureka}
+    healthcheck:
+      enabled: true
     #registry-fetch-interval-seconds: 10
     #disable-delta: false
   instance:
-    #instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
     preferIpAddress: true
-    #statusPageUrlPath: ${server.servlet.context-path}/info
-    #healthCheckUrlPath: ${server.servlet.context-path}/health
     #lease-expiration-duration-in-seconds: 90
     lease-renewal-interval-in-seconds: 30
-    #statusPageUrl: http://${eureka.instance.hostname}/info
-    #healthCheckUrl: http://${eureka.instance.hostname}/health
-    #homePageUrl: http://${eureka.instance.hostname}/
+    statusPageUrlPath: ${server.servlet.context-path}:${server.port}/info
+    healthCheckUrlPath: ${server.servlet.context-path}${server.port}/health
     
 
 #Database Configuration

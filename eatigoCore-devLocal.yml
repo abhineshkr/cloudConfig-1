@@ -21,7 +21,7 @@ management:
 
 logging:
   level:
-    root: ERROR
+    root: INFO
     org.springframework.cloud.config: ERROR
     org.springframework: ERROR
     org.hibernate: ERROR
@@ -33,17 +33,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://202.149.218.74:10089/eureka}
-    healthcheck:
-      enabled: true
-    #registry-fetch-interval-seconds: 10
-    #disable-delta: false
   instance:
-    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
     preferIpAddress: true
-    #lease-expiration-duration-in-seconds: 90
-    lease-renewal-interval-in-seconds: 30
-    #statusPageUrlPath: ${server.servlet.context-path}/info
-    #healthCheckUrlPath: ${server.servlet.context-path}/health
     
 
 #Database Configuration
@@ -87,7 +78,3 @@ redis:
   port: 6379
   time-to-live: 120  
   
-#Client Instance
-#If your app wants to be contacted over HTTPS, you can set two flags in the EurekaInstanceConfig:
-#eureka.instance.[nonSecurePortEnabled]=[false]
-#eureka.instance.[securePortEnabled]=[true]

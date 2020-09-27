@@ -46,9 +46,7 @@ eureka:
     lease-renewal-interval-in-seconds: 30
     statusPageUrl: http://${eureka.instance.hostname}/info
     healthCheckUrl: http://${eureka.instance.hostname}/health
-    homePageUrl: http://${eureka.instance.hostname}/
-    
-    
+    homePageUrl: http://${eureka.instance.hostname}/ 
 
 #Database Configuration
 jdbc-url: jdbc:postgresql://202.149.218.74:5436/eatigo

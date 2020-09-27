@@ -42,8 +42,8 @@ eureka:
     preferIpAddress: true
     #lease-expiration-duration-in-seconds: 90
     lease-renewal-interval-in-seconds: 30
-    statusPageUrlPath: ${server.servlet.context-path}:${server.port}/info
-    healthCheckUrlPath: ${server.servlet.context-path}:${server.port}/health
+    statusPageUrlPath: ${server.servlet.context-path}/info
+    healthCheckUrlPath: ${server.servlet.context-path}/health
     
 
 #Database Configuration

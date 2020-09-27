@@ -43,7 +43,7 @@ eureka:
     #lease-expiration-duration-in-seconds: 90
     lease-renewal-interval-in-seconds: 30
     statusPageUrlPath: ${server.servlet.context-path}:${server.port}/info
-    healthCheckUrlPath: ${server.servlet.context-path}${server.port}/health
+    healthCheckUrlPath: ${server.servlet.context-path}:${server.port}/health
     
 
 #Database Configuration

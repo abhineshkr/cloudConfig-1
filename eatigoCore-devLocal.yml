@@ -33,20 +33,19 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://202.149.218.74:10089/eureka}
-    healthcheck:
-      enabled: true
     #registry-fetch-interval-seconds: 10
     #disable-delta: false
   instance:
-    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    #instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
     preferIpAddress: true
-    statusPageUrlPath: ${server.servlet.context-path}/info
-    healthCheckUrlPath: ${server.servlet.context-path}/health
+    #statusPageUrlPath: ${server.servlet.context-path}/info
+    #healthCheckUrlPath: ${server.servlet.context-path}/health
     #lease-expiration-duration-in-seconds: 90
     lease-renewal-interval-in-seconds: 30
-    statusPageUrl: http://${eureka.instance.hostname}/info
-    healthCheckUrl: http://${eureka.instance.hostname}/health
-    homePageUrl: http://${eureka.instance.hostname}/ 
+    #statusPageUrl: http://${eureka.instance.hostname}/info
+    #healthCheckUrl: http://${eureka.instance.hostname}/health
+    #homePageUrl: http://${eureka.instance.hostname}/
+    
 
 #Database Configuration
 jdbc-url: jdbc:postgresql://202.149.218.74:5436/eatigo
@@ -57,9 +56,9 @@ jdbc-password: atul@1978eppsprogrammer
 ##maximum number of milliseconds that a client will wait for a connection
 connection-timeout: 10000
 ##minimum number of idle connections maintained by HikariCP in a connection pool
-minimum-idle: 2
+minimum-idle: 5
 ##maximum pool size
-maximum-pool-size: 10
+maximum-pool-size: 20
 ##maximum idle time for connection
 idle-timeout: 10000
 
@@ -89,3 +88,7 @@ redis:
   port: 6379
   time-to-live: 120  
   
+#Client Instance
+#If your app wants to be contacted over HTTPS, you can set two flags in the EurekaInstanceConfig:
+#eureka.instance.[nonSecurePortEnabled]=[false]
+#eureka.instance.[securePortEnabled]=[true]

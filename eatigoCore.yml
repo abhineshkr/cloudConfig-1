@@ -33,13 +33,12 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://202.149.218.74:10089/eureka}
-     
-    #registry-fetch-interval-seconds: 10
-    #disable-delta: false
+    healthcheck:
+      enabled: true
   instance:
     preferIpAddress: true
-    #lease-expiration-duration-in-seconds: 90
-    #lease-renewal-interval-in-seconds: 40
+    lease-renewal-interval-in-seconds: 30
+    
     
 
 #Database Configuration

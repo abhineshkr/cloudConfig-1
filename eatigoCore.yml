@@ -25,10 +25,13 @@ eureka:
     lease-renewal-interval-in-seconds: 30
     
 logging:
-    pattern:
-        console: %d{yyyy-MM-dd HH:mm:ss} - %msg%n
-        file: %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
-    file: /logs/${spring.application.name}.log
+  level:
+    com.epps.eatigo.module.infrastructure.feignclient.EatigoCoreFeignClient: DEBUG
+  pattern:
+       console: %d{yyyy-MM-dd HH:mm:ss} - %msg%n
+       file: %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+  file: /logs/${spring.application.name}.log
+
 
 #Database Configuration
 jdbc-url: jdbc:postgresql://202.149.218.74:5436/eatigo

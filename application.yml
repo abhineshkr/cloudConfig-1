@@ -29,4 +29,12 @@ spring:
 redis:
   host: 202.149.218.74
   port: 6379
-  time-to-live: 120  
+  time-to-live: 120
+
+feign:
+   client:
+      config:
+        default:
+          connectTimeout: 900000
+          readTimeout: 900000
+          loggerLevel: FULL

@@ -16,22 +16,23 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
-  resources:
-    cache:
-      cachecontrol:
-        cache-private: true
-        cache-public: true
-        max-age: 120
-        must-revalidate: true
+  #resources:
+    #cache:
+      #cachecontrol:
+        #cache-private: true
+        #cache-public: true
+        #max-age: 120
+        #must-revalidate: true
   servlet:
     multipart:
       file-size-threshold: 2KB
       location: /tmp
       max-file-size: 50MB
       max-request-size: 75MB
+
 logging:
   level:
-    root: INFO
+    com.epps.eatigo.module.infrastructure.feignclient.EatigoCoreFeignClient: DEBUG
     
 eureka:
   client:
@@ -39,11 +40,3 @@ eureka:
       defaultZone: ${EUREKA_URI:http://202.149.218.74:10089/eureka}
   instance:
     preferIpAddress: true
-
-feign:
-   client:
-      config:
-        default:
-          connectTimeout: 900000
-          readTimeout: 900000
-          loggerLevel: basic

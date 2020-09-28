@@ -24,6 +24,15 @@ spring:
                 username: kg
                 password: kg
                 virtual-host: /
+             
+  zipkin:
+    base-url: http://192.168.1.170:9411
+    sender:
+      type: rabbit
+  sleuth:
+    sampler:
+      probability: 1
+
 ##Redis 
 redis:
   host: 202.149.218.74
@@ -60,3 +69,4 @@ logging:
     org.hibernate: ERROR
     org.hibernate.type.descriptor.sql.BasicBinder: ERROR
     com.epps.eatigo: DEBUG
+ 

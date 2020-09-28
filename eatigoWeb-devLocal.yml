@@ -48,5 +48,7 @@ feign:
           connectTimeout: 900000
           readTimeout: 900000
           loggerLevel: FULL
+   hystrix:
+     enabled: true 
           
 gateway-url: http://202.149.218.74:10080

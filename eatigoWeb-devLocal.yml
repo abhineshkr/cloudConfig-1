@@ -17,12 +17,12 @@ spring:
       prefix: /WEB-INF/views/
       suffix: .jsp
   resources:
-    cache:
-      cachecontrol:
-        cache-private: true
-        cache-public: true
-        max-age: 120
-        must-revalidate: true
+    #cache:
+      #cachecontrol:
+        #cache-private: true
+        #cache-public: true
+        #max-age: 120
+        #must-revalidate: true
   servlet:
     multipart:
       file-size-threshold: 2KB

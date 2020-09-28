@@ -48,4 +48,4 @@ feign:
           readTimeout: 900000
           loggerLevel: basic
           
-gateway-url:http://202.149.218.74:10080
+gateway-url: http://202.149.218.74:10080

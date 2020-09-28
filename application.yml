@@ -25,3 +25,8 @@ spring:
                 username: kg
                 password: kg
                 virtual-host: /
+##Redis 
+redis:
+  host: 202.149.218.74
+  port: 6379
+  time-to-live: 120  

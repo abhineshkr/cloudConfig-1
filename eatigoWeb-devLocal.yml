@@ -32,6 +32,7 @@ spring:
 logging:
   level:
     root: INFO
+    com.epps.eatigo.module.infrastructure.feignclient.EatigoCoreFeignClient: DEBUG
     
 eureka:
   client:

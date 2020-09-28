@@ -29,9 +29,9 @@ spring:
       location: /tmp
       max-file-size: 50MB
       max-request-size: 75MB
+
 logging:
   level:
-    root: INFO
     com.epps.eatigo.module.infrastructure.feignclient.EatigoCoreFeignClient: DEBUG
     
 eureka:
@@ -40,15 +40,5 @@ eureka:
       defaultZone: ${EUREKA_URI:http://202.149.218.74:10089/eureka}
   instance:
     preferIpAddress: true
-
-feign:
-   client:
-      config:
-        default:
-          connectTimeout: 900000
-          readTimeout: 900000
-          loggerLevel: FULL
-   hystrix:
-     enabled: true 
-          
+         
 gateway-url: http://202.149.218.74:10080

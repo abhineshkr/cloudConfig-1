@@ -13,20 +13,6 @@ server:
     context-path: /eatigoFas
   port: 10084
   
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream
-
-logging:
-  level:
-    root: INFO
-    org.springframework.cloud.config: ERROR
-    org.springframework: DEBUG
-    org.hibernate: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: DEBUG
-
 # Check - Multiple Zone Eureka Zone
 eureka:
   client:
@@ -35,14 +21,6 @@ eureka:
   instance:
     preferIpAddress: true
 
-feign:
-   client:
-      config:
-        default:
-          connectTimeout: 900000
-          readTimeout: 900000
-          loggerLevel: basic
-   
 #Database Configuration
 jdbc-url: jdbc:postgresql://202.149.218.74:5436/eatigo
 jdbc-driverClassName: org.postgresql.Driver

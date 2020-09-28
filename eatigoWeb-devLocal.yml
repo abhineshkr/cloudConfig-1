@@ -29,6 +29,11 @@ spring:
       location: /tmp
       max-file-size: 50MB
       max-request-size: 75MB
+
+logging:
+  level:
+    com.epps.eatigo.module.infrastructure.feignclient.EatigoCoreFeignClient: DEBUG
+    
 eureka:
   client:
     serviceUrl:

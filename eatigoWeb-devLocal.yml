@@ -36,7 +36,7 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://localhost:10089/eureka}
+      defaultZone: ${EUREKA_URI:http://http://202.149.218.74/:10089/eureka}
   instance:
     preferIpAddress: true
 

@@ -22,6 +22,11 @@ eureka:
     preferIpAddress: true
     instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     
+logging:
+  pattern:
+       console: %d{yyyy-MM-dd HH:mm:ss} - %msg%n
+       file: %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+  file: /logs/${spring.application.name}.log
 
 #Database Configuration
 jdbc-url: jdbc:postgresql://202.149.218.74:5436/eatigo

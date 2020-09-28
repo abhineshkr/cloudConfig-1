@@ -1,30 +1,6 @@
 spring:
   application:
     name: eatigoCore
-  cloud:
-    config:
-      uri: http://202.149.218.74:10088
-      fail-fast: true
-    stream:
-      bindings:
-        SinkChannel:
-          destination: rabbitpubSubExchange
-          binder: local_rabbit
-          group: rabbitMQGroup
-        SourceChannel:
-          destination: rabbitpubSubExchange
-          binder: local_rabbit
-      binders:
-         local_rabbit:
-          type: rabbit
-          environment:
-            spring:
-              rabbitmq:
-                host: 192.168.1.248
-                port: 5672
-                username: kg
-                password: kg
-                virtual-host: /
 
 server:
   compression:
@@ -36,21 +12,6 @@ server:
   servlet:
     context-path: /eatigoCore
   port: 10082
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
-logging:
-  level:
-    root: INFO
-    org.springframework.cloud.config: ERROR
-    org.springframework: ERROR
-    org.hibernate: ERROR
-    org.hibernate.type.descriptor.sql.BasicBinder: ERROR
-    com.epps.eatigo: DEBUG
 
 # Check - Multiple Zone Eureka Zone
 eureka:
@@ -77,14 +38,7 @@ maximum-pool-size: 20
 ##maximum idle time for connection
 idle-timeout: 10000
 
-feign:
-   client:
-      config:
-        default:
-          connectTimeout: 900000
-          readTimeout: 900000
-          loggerLevel: none
-          
+       
 #defaullt value is 90 seconds
 #lease-expiration-duration-in-seconds:60.
 
@@ -96,10 +50,4 @@ feign:
   #z1: http://localhost:5001/eureka
   #z1: http://localhost:5001/eureka
   #z1: http://localhost:5001/eureka
-  
-##Redis 
-redis:
-  host: 192.168.1.248
-  port: 6379
-  time-to-live: 120  
   

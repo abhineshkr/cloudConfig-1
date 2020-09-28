@@ -1,6 +1,6 @@
 spring:
-  application:
-    name: eatigoCore
+   application:
+    name: eatigoCore 
 
 server:
   compression:
@@ -18,15 +18,13 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://202.149.218.74:10089/eureka}
+    healthcheck:
+      enabled: true
   instance:
     preferIpAddress: true
-    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    lease-renewal-interval-in-seconds: 30
     
-logging:
-  pattern:
-       console: %d{yyyy-MM-dd HH:mm:ss} - %msg%n
-       file: %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
-  file: /logs/${spring.application.name}.log
+    
 
 #Database Configuration
 jdbc-url: jdbc:postgresql://202.149.218.74:5436/eatigo
@@ -37,13 +35,12 @@ jdbc-password: atul@1978eppsprogrammer
 ##maximum number of milliseconds that a client will wait for a connection
 connection-timeout: 10000
 ##minimum number of idle connections maintained by HikariCP in a connection pool
-minimum-idle: 5
+minimum-idle: 10
 ##maximum pool size
-maximum-pool-size: 20
+maximum-pool-size: 30
 ##maximum idle time for connection
 idle-timeout: 10000
 
-       
 #defaullt value is 90 seconds
 #lease-expiration-duration-in-seconds:60.
 
@@ -55,4 +52,3 @@ idle-timeout: 10000
   #z1: http://localhost:5001/eureka
   #z1: http://localhost:5001/eureka
   #z1: http://localhost:5001/eureka
-  

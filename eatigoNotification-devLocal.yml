@@ -28,7 +28,7 @@ jdbc-username: epps_programmer
 jdbc-password: atul@1978eppsprogrammer
 
 ##maximum number of milliseconds that a client will wait for a connection
-connection-timeout: 10000
+connection-timeout: 20000
 ##minimum number of idle connections maintained by HikariCP in a connection pool
 minimum-idle: 10
 ##maximum pool size

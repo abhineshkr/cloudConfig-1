@@ -53,8 +53,6 @@ eureka:
      metadataMap:
          instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
          
-gateway-url: http://202.149.218.74:10080
-
 feign:
    client:
       config:
@@ -62,3 +60,5 @@ feign:
           connectTimeout: 900000
           readTimeout: 900000
           loggerLevel: FULL
+          
+gateway-url: http://202.149.218.74:10080

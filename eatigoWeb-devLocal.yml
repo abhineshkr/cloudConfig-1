@@ -30,14 +30,14 @@ spring:
       max-file-size: 50MB
       max-request-size: 75MB
   
-  #zipkin:
-    #enabled: true
-    #base-url: http://192.168.1.170:9411
-    #sender:
-      #type: rabbit
-  #sleuth:
-    #sampler:
-      #probability: 1
+  zipkin:
+    enabled: true
+    base-url: http://192.168.1.170:9411
+    sender:
+      type: rabbit
+  sleuth:
+    sampler:
+      probability: 1
       
 logging:
   file:

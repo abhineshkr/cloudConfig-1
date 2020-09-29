@@ -15,7 +15,7 @@ server:
 #To Stop Discovery Eureka Server Instance
 eureka:
   instance:
-   hostname: 202.149.218.74
+   hostname: localhost
   client:
       registerWithEureka: false
       fetchRegistry: false

@@ -18,11 +18,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://202.149.218.74:10089/eureka}
-    healthcheck:
-      enabled: true
   instance:
     preferIpAddress: true
-    lease-renewal-interval-in-seconds: 30
     
   zipkin:
     base-url: http://192.168.1.170:9411

@@ -35,12 +35,7 @@ minimum-idle: 2
 maximum-pool-size: 10 
 ##maximum idle time for connection
 idle-timeout: 10000
-
-
-
-
-
-    
+   
 #defaullt value is 90 seconds
 #lease-expiration-duration-in-seconds:60.
 
@@ -52,3 +47,11 @@ idle-timeout: 10000
   #z1: http://localhost:5001/eureka
   #z1: http://localhost:5001/eureka
   #z1: http://localhost:5001/eureka
+ 
+feign:
+   client:
+      config:
+        default:
+          connectTimeout: 900000
+          readTimeout: 900000
+          loggerLevel: basic

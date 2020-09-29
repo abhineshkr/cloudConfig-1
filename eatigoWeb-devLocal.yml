@@ -16,7 +16,7 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
-  resources:
+  #resources:
     #cache:
       #cachecontrol:
         #cache-private: true
@@ -61,4 +61,4 @@ feign:
         default:
           connectTimeout: 900000
           readTimeout: 900000
-          loggerLevel: basic
+          loggerLevel: FULL

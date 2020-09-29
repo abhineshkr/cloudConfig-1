@@ -49,6 +49,18 @@ maximum-pool-size: 30
 ##maximum idle time for connection
 idle-timeout: 10000
 
+management:
+  endpoint:
+    health:
+      show-details: always
+    bus-refresh:
+      enabled: true
+        
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        
 #defaullt value is 90 seconds
 #lease-expiration-duration-in-seconds:60.
 

@@ -18,12 +18,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://202.149.218.74:10089/eureka}
-    healthcheck:
-      enabled: true
   instance:
-    preferIpAddress: true
-    lease-renewal-interval-in-seconds: 30
-
+     metadataMap:
+         instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+         
   zipkin:
     base-url: http://192.168.1.170:9411
     sender:

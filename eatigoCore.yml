@@ -35,7 +35,19 @@ eureka:
 logging:
   file:
     name: ${spring.application.name}
-
+    
+management:
+  endpoint:
+    health:
+      show-details: always
+    bus-refresh:
+      enabled: true
+        
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        
 #Database Configuration
 jdbc-url: jdbc:postgresql://202.149.218.74:5436/eatigo
 jdbc-driverClassName: org.postgresql.Driver

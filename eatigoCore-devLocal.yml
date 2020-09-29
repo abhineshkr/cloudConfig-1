@@ -62,3 +62,10 @@ idle-timeout: 10000
   #z1: http://localhost:5001/eureka
   #z1: http://localhost:5001/eureka
   #z1: http://localhost:5001/eureka
+feign:
+   client:
+      config:
+        default:
+          connectTimeout: 900000
+          readTimeout: 900000
+          loggerLevel: basic

@@ -1,7 +1,13 @@
 spring:
    application:
     name: eatigoCore 
-
+   zipkin:
+    base-url: http://192.168.1.170:9411
+    sender:
+      type: web
+   sleuth:
+    sampler:
+      probability: 1
 server:
   compression:
     enabled: true
@@ -20,14 +26,7 @@ eureka:
       defaultZone: ${EUREKA_URI:http://202.149.218.74:10089/eureka}
   instance:
     preferIpAddress: true
-         
-  zipkin:
-    base-url: http://192.168.1.170:9411
-    sender:
-      type: web
-  sleuth:
-    sampler:
-      probability: 1    
+   
 
 logging:
   file:
@@ -71,6 +70,7 @@ management:
   #z1: http://localhost:5001/eureka
   #z1: http://localhost:5001/eureka
   #z1: http://localhost:5001/eureka
+  
 feign:
    client:
       config:

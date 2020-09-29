@@ -53,3 +53,11 @@ eureka:
     preferIpAddress: true
          
 gateway-url: http://202.149.218.74:10080
+
+feign:
+   client:
+      config:
+        default:
+          connectTimeout: 900000
+          readTimeout: 900000
+          loggerLevel: basic

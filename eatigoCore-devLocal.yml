@@ -19,8 +19,7 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://202.149.218.74:10089/eureka}
   instance:
-     metadataMap:
-         instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+    preferIpAddress: true
          
   zipkin:
     base-url: http://192.168.1.170:9411

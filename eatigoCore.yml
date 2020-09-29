@@ -1,5 +1,5 @@
 spring:
-   application:
+  application:
     name: eatigoCore 
 
 server:
@@ -24,7 +24,17 @@ eureka:
     preferIpAddress: true
     lease-renewal-interval-in-seconds: 30
     
-    
+  zipkin:
+    base-url: http://192.168.1.170:9411
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1    
+
+logging:
+  file:
+    name: ${spring.application.name}
 
 #Database Configuration
 jdbc-url: jdbc:postgresql://202.149.218.74:5436/eatigo

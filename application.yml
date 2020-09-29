@@ -64,3 +64,15 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: ERROR
     com.epps.eatigo: DEBUG
  
+ management:
+  endpoint:
+    health:
+      show-details: always
+    bus-refresh:
+      enabled: true
+        
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        

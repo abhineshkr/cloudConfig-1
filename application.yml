@@ -54,12 +54,7 @@ redis:
            #enabled: true 
          #response:
            #enabled: true
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
+           
 logging:
   level:
     root: INFO

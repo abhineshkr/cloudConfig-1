@@ -12,15 +12,7 @@ server:
   servlet:
     context-path: /eatigoCore
   port: 10082
-
-# Check - Multiple Zone Eureka Zone
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: ${EUREKA_URI:http://202.149.218.74:10089/eureka}
-  instance:
-    preferIpAddress: true
-         
+  
   zipkin:
     base-url: http://192.168.1.170:9411
     sender:
@@ -71,11 +63,25 @@ management:
   #z1: http://localhost:5001/eureka
   #z1: http://localhost:5001/eureka
   #z1: http://localhost:5001/eureka
+
+eureka:
+  instance:
+     hostname: 202.149.218.74
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:10089/eureka/
+
 feign:
+   compression:
+      request:
+        enable: true
+        mime-types: text/xml,application/xml,application/json
+        min-request-size: 2048
    client:
       config:
         default:
-          connectTimeout: 900000
-          readTimeout: 900000
-          loggerLevel: basic
-  
+          connectTimeout: 5000
+          readTimeout: 5000
+          loggerLevel: FULL

@@ -17,11 +17,26 @@ server:
   
 # Check - Multiple Zone Eureka Zone
 eureka:
-  client:
-    serviceUrl:
-      defaultZone: ${EUREKA_URI:http://202.149.218.74:10089/eureka}
   instance:
-    preferIpAddress: true
+     hostname: 202.149.218.74
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:10089/eureka/
+
+feign:
+   compression:
+      request:
+        enable: true
+        mime-types: text/xml,application/xml,application/json
+        min-request-size: 2048
+   client:
+      config:
+        default:
+          connectTimeout: 5000
+          readTimeout: 5000
+          loggerLevel: FULL
              
 #Database Configuration
 jdbc-url: jdbc:postgresql://202.149.218.74:5436/eatigo
@@ -50,11 +65,3 @@ idle-timeout: 10000
   #z1: http://localhost:5001/eureka
   #z1: http://localhost:5001/eureka
   #z1: http://localhost:5001/eureka
-
-feign:
-   client:
-      config:
-        default:
-          connectTimeout: 900000
-          readTimeout: 900000
-          loggerLevel: basic

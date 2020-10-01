@@ -13,12 +13,17 @@ server:
     context-path: /eatigoBiiling
   port: 10085
 
-
 management:
+  endpoint:
+    health:
+      show-details: always
+    bus-refresh:
+      enabled: true
+        
   endpoints:
     web:
       exposure:
-        include: hystrix.stream
+        include: "*"
    
 logging:
   level:

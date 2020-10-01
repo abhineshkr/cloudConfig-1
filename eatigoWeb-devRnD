@@ -39,7 +39,7 @@ spring:
     sampler:
       probability: 1
       
-logging.file: ${spring.application.name}.log
+logging.file: /tmp/${spring.application.name}.log
 logging:
   level:
     root: INFO

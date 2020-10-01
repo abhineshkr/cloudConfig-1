@@ -9,10 +9,12 @@ logging:
   level:
     root: INFO
  
- 
 eureka:
- client:
-   serviceUrl:
-     defaultZone: ${EUREKA_URI:http://202.149.218.74:10089/eureka}
- instance:
-   preferIpAddress: true
+  instance:
+     hostname: 202.149.218.74
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:10089/eureka/
+

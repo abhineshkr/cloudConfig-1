@@ -32,7 +32,7 @@ spring:
   
   zipkin:
     enabled: true
-    base-url: http://192.168.1.170:9411
+    base-url: http://202.149.218.74:9411
     sender:
       type: rabbit
   sleuth:

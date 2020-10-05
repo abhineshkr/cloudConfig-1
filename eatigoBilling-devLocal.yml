@@ -80,3 +80,5 @@ feign:
           connectTimeout: 5000
           readTimeout: 5000
           loggerLevel: FULL
+        
+gateway-url: http://202.149.218.74:10080

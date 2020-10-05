@@ -11,7 +11,7 @@ server:
 
 spring: 
   zipkin:
-    base-url: http://202.149.218.74:9411
+    base-url: http://202.149.218.74:9411/
   application:
     name: eatigoWeb
   mvc:

@@ -1,6 +1,13 @@
 spring:
   application:
     name: eatigoCore 
+  zipkin:
+    base-url: http://192.168.1.170:9411
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1 
 
 server:
   compression:
@@ -12,15 +19,7 @@ server:
   servlet:
     context-path: /eatigoCore
   port: 10082
-  
-  zipkin:
-    base-url: http://192.168.1.170:9411
-    sender:
-      type: web
-  sleuth:
-    sampler:
-      probability: 1    
-
+ 
 logging:
   file:
     name: ${spring.application.name}

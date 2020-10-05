@@ -9,7 +9,9 @@ server:
     context-path: /eatigoWeb
   port: 10081
 
-spring:
+spring: 
+  zipkin:
+    base-url: http://202.149.218.74:9411
   application:
     name: eatigoWeb
   mvc:
@@ -29,15 +31,6 @@ spring:
       location: /tmp
       max-file-size: 50MB
       max-request-size: 75MB
-  
-  zipkin:
-    enabled: true
-    base-url: http://202.149.218.74:9411
-    sender:
-      type: rabbit
-  sleuth:
-    sampler:
-      probability: 1
       
 logging:
   file:

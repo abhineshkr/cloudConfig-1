@@ -1,18 +1,1 @@
-spring:
-   application:
-    name: eatigoHystrixDashBoard    
-server:
-  port: 10090
-  
-  
-logging:
-  level:
-    root: INFO
- 
- 
-eureka:
- client:
-   serviceUrl:
-     defaultZone: ${EUREKA_URI:http://localhost:10089/eureka}
- instance:
-   preferIpAddress: true
+
